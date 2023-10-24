@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+chown -h -R 0:0 /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target
+/home/jee/linux/armv7/ll/buildroot/output/host/bin/makedevs -d /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/full_devices_table.txt /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target
+   	rm -rf /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target/usr/lib/udev/hwdb.d/ /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target/etc/udev/hwdb.d/
+find /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target/run/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --
+find /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target/tmp/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --
+   
+   
+   	rm -f /home/jee/linux/armv7/ll/buildroot/output/images/rootfs.ext2
+	/home/jee/linux/armv7/ll/buildroot/output/host/sbin/mkfs.ext4 -d /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/ext2/target -r 1 -N 0 -m 5 -L "rootfs" -I 256 -O ^64bit /home/jee/linux/armv7/ll/buildroot/output/images/rootfs.ext2 "60M" || { ret=$?; echo "*** Maybe you need to increase the filesystem size (BR2_TARGET_ROOTFS_EXT2_SIZE)" 1>&2; exit $ret; }

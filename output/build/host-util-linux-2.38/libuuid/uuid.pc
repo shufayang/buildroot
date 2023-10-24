@@ -1,0 +1,11 @@
+prefix=/home/jee/linux/armv7/ll/buildroot/output/host
+exec_prefix=/home/jee/linux/armv7/ll/buildroot/output/host
+libdir=/home/jee/linux/armv7/ll/buildroot/output/host/lib
+includedir=/home/jee/linux/armv7/ll/buildroot/output/host/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.38.0
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

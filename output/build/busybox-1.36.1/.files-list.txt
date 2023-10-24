@@ -1,0 +1,7 @@
+busybox,./bin/busybox
+busybox,./usr/share/udhcpc/default.script
+busybox,./etc/mdev.conf
+busybox,./etc/init.d/S10mdev
+busybox,./etc/init.d/S01syslogd
+busybox,./etc/init.d/S02klogd
+busybox,./etc/init.d/S02sysctl

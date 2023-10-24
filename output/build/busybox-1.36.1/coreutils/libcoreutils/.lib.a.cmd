@@ -1,0 +1,1 @@
+cmd_coreutils/libcoreutils/lib.a := rm -f coreutils/libcoreutils/lib.a; /home/jee/linux/armv7/ll/buildroot/output/host/bin/arm-linux-gnueabihf-gcc-ar  rcs coreutils/libcoreutils/lib.a coreutils/libcoreutils/cp_mv_stat.o coreutils/libcoreutils/getopt_mk_fifo_nod.o

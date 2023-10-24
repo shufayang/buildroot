@@ -1,0 +1,2 @@
+add-auto-load-safe-path /home/jee/linux/armv7/ll/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot
+set sysroot /home/jee/linux/armv7/ll/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot

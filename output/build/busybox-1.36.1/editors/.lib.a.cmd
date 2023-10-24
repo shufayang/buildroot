@@ -1,0 +1,1 @@
+cmd_editors/lib.a := rm -f editors/lib.a; /home/jee/linux/armv7/ll/buildroot/output/host/bin/arm-linux-gnueabihf-gcc-ar  rcs editors/lib.a editors/awk.o editors/cmp.o editors/diff.o editors/patch.o editors/sed.o editors/vi.o

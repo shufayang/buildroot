@@ -1,0 +1,1 @@
+cmd_archival/lib.a := rm -f archival/lib.a; /home/jee/linux/armv7/ll/buildroot/output/host/bin/arm-linux-gnueabihf-gcc-ar  rcs archival/lib.a archival/ar.o archival/bbunzip.o archival/chksum_and_xwrite_tar_header.o archival/cpio.o archival/gzip.o archival/lzop.o archival/tar.o archival/unzip.o

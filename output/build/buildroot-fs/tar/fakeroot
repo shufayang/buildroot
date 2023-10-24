@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+chown -h -R 0:0 /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target
+/home/jee/linux/armv7/ll/buildroot/output/host/bin/makedevs -d /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/full_devices_table.txt /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target
+   	rm -rf /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target/usr/lib/udev/hwdb.d/ /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target/etc/udev/hwdb.d/
+find /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target/run/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --
+find /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target/tmp/ -mindepth 1 -prune -print0 | xargs -0r rm -rf --
+   
+   
+   	(cd /home/jee/linux/armv7/ll/buildroot/output/build/buildroot-fs/tar/target; find -print0 | LC_ALL=C sort -z | tar  --pax-option=exthdr.name=%d/PaxHeaders/%f,atime:=0,ctime:=0 -cf /home/jee/linux/armv7/ll/buildroot/output/images/rootfs.tar --null --xattrs-include='*' --no-recursion -T - --numeric-owner)
